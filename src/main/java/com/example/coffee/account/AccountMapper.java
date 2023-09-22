@@ -8,9 +8,7 @@ import java.util.Date;
 import java.util.List;
 
 @Mapper
-@Repository
 public interface AccountMapper {
     List<Account.Member> GetAllAccount();
-
     Account.ChooseBuyerSelector ChooseBuyerSelector();
 }

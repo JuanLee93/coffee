@@ -2,6 +2,7 @@ package com.example.coffee.account;
 
 import com.example.coffee.account.domain.Account;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,15 +18,10 @@ import java.util.List;
 @RestController
 @RequestMapping(value = "/api/v1/account")
 @RequiredArgsConstructor
+@Slf4j
 public class AccountController {
-    private final Logger logger = LoggerFactory.getLogger(AccountController.class);
 
-    private AccountService accountService;
-
-    @Autowired
-    public AccountController(AccountService accountService) {
-        this.accountService = accountService;
-    }
+    private final AccountService accountService;
 
     @GetMapping(value = "/getAllAccount")
     public ResponseEntity<List<Account.Member>> GetAllAccount(){
@@ -38,6 +34,5 @@ public class AccountController {
         Account.ChooseBuyerForInform response = accountService.getBuyerByCurrentDate();
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
-
 
 }

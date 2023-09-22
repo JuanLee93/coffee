@@ -2,6 +2,7 @@ package com.example.coffee.account;
 
 import com.example.coffee.account.domain.Account;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,20 +17,15 @@ import java.util.stream.Stream;
 @Service
 @RequiredArgsConstructor
 @Transactional
+@Slf4j
 public class AccountService {
 
-    private final Logger logger = LoggerFactory.getLogger(AccountService.class);
-    AccountMapper accountMapper;
-
-    @Autowired
-    public AccountService(AccountMapper accountMapper) {
-        this.accountMapper = accountMapper;
-    }
+    private final AccountMapper accountMapper;
 
     public List<Account.Member> GetAllAccount(){
         List<Account.Member> member = accountMapper.GetAllAccount();
         //list형태의 객체를 stream으로 출력 (외부 반복자)
-        member.stream().forEach(s -> logger.error("s :"+s));
+        member.stream().forEach(s -> log.error("s :"+s));
         return member;
     }
 
