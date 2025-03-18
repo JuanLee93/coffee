@@ -11,6 +11,16 @@ public class Account {
         private int id;
         private String name;
         private String phone;
+        private boolean isBuy;
+
+        @Override
+        public String toString() {
+            return "Member{" +
+                    "id=" + id +
+                    ", name='" + name + '\'' +
+                    ", phone='" + phone + '\'' +
+                    '}';
+        }
     }
 
     @Getter
