@@ -53,19 +53,11 @@ Response JSON:
 (모든 멤버가 한 번씩 샀다면 "reset": true 반환)
 
 🛠 기술 스택
-
 Backend: Java17, Spring Boot 3.X
-
 Database: Maria DB
-
 Containerization: Docker
 
-
-
 📌 추가 기능 예정
-
-멤버 추가 / 삭제 API
-
-커피 구매 기록 저장
-
-관리자 기능 추가
+- 멤버 추가 / 삭제 API
+- 커피 구매 기록 저장
+- 관리자 기능 추가
